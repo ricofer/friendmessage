@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Yhesha Mae 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #333;
+      text-align: center;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px 25px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #8effa2;
+    }
+
+    #noBtn {
+      background-color: #ff7c7c;
+      position: absolute;
+    }
+
+    #loveLetter {
+      display: none;
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    /* Optional: style for photo */
+    .birthday-photo {
+      width: 220px;
+      border-radius: 20px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Hi Yhesha</h1>
+  <h2>Do you love kuyang?</h2>
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+</div>
+
+<!-- Optional: Add your photo here -->
+<!-- <img src="your-photo.jpg" alt="Birthday Photo" class="birthday-photo"> -->
+
+<div id="loveLetter">
+  <h2>Wasssupp yhesha (sha) </h2>
+  <p>
+    Thanks for always being that one person I can randomly message about literaly anything-from deep life thoughts 
+    to the most useless chismis (diko alam kung useless 😅) You've heard it all:my drama in life,my rants and somehow
+    andjan ka parin hehehe
+  </p>
+  <p>
+    You get my moods without me saying much, and you just get my way in a way not everyone does, I don't say it often,
+    But i really appreciate you for just being there -no judgnment, no pressure, just real.
+
+    Thanks for unofficially being my therapist, Gymbuddy na sana, and jogging buddy.
+  </p>
+  <p>
+    Always and forever,  
+    <br>
+    Your Friend,  
+    <strong>John Rico Fragata</strong>
+  </p>
+</div>
+
+<script>
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+  const letter = document.getElementById('loveLetter');
+  const container = document.querySelector('.container');
+
+  let yesClicks = 0;
+
+  yesBtn.addEventListener('click', () => {
+    yesClicks++;
+    if (yesClicks === 1) {
+      yesBtn.textContent = "Are you sure?";
+    } else if (yesClicks === 2) {
+      yesBtn.textContent = "Really sure?";
+    } else if (yesClicks === 3) {
+      yesBtn.textContent = "Reallyyy?";
+    } else {
+      container.style.display = "none";
+      letter.style.display = "block";
+    }
+  });
+
+  // Make "No" button run away
+  noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+</script>
+
+</body>
+</html>
